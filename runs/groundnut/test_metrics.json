@@ -1,0 +1,69 @@
+{
+  "accuracy": 0.9946911196911197,
+  "precision_macro": 0.9947660275733967,
+  "recall_macro": 0.9950176991151692,
+  "f1_macro": 0.9948707929838659,
+  "confusion_matrix": [
+    [
+      346,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      295,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      370,
+      0,
+      3,
+      0
+    ],
+    [
+      5,
+      0,
+      0,
+      374,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      2,
+      0,
+      331,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      345
+    ]
+  ],
+  "class_names": [
+    "early_leaf_spot_1",
+    "early_rust_1",
+    "healthy_leaf_1",
+    "late_leaf_spot_1",
+    "nutrition_deficiency_1",
+    "rust_1"
+  ],
+  "classification_report": "                        precision    recall  f1-score   support\n\n     early_leaf_spot_1     0.9830    1.0000    0.9914       346\n          early_rust_1     1.0000    1.0000    1.0000       295\n        healthy_leaf_1     0.9946    0.9893    0.9920       374\n      late_leaf_spot_1     1.0000    0.9868    0.9934       379\nnutrition_deficiency_1     0.9910    0.9940    0.9925       333\n                rust_1     1.0000    1.0000    1.0000       345\n\n              accuracy                         0.9947      2072\n             macro avg     0.9948    0.9950    0.9949      2072\n          weighted avg     0.9947    0.9947    0.9947      2072\n",
+  "training_time_s": 538.8676846027374,
+  "inference_time_s_per_image": 0.0009300261160581729,
+  "trainable_params": 6237638,
+  "total_params": 7667270
+}

@@ -1,0 +1,25 @@
+# datasets — not redistributed
+data/
+**/split/
+**/splits/
+*.JPG
+*.JPEG
+
+# model checkpoints (large binaries, regenerate by rerunning training)
+*.pt
+*.pth
+*.keras
+*.h5
+
+# Kaggle API credentials — never commit these
+kaggle.json
+.kaggle/
+
+# python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
