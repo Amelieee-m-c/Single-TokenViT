@@ -13,6 +13,33 @@
 > 沒有找到官方程式碼;這是從論文的公式 (1)-(22) 和 Figure 1-4 獨立重新實作
 > 的 clean-room 版本。
 
+## Pretrained Models
+
+5 個資料集各自訓練的權重發布在
+[Releases](https://github.com/Amelieee-m-c/Single-TokenViT/releases/tag/v1.0-official):
+
+| 模型 | 資料集 | Test Accuracy | 下載 |
+|---|---|---|---|
+| `corn.pt` | Corn leaf,4 類 | 96.30% | [下載](https://github.com/Amelieee-m-c/Single-TokenViT/releases/download/v1.0-official/corn.pt) |
+| `tomato.pt` | Tomato leaf,10 類 | 99.30% | [下載](https://github.com/Amelieee-m-c/Single-TokenViT/releases/download/v1.0-official/tomato.pt) |
+| `banana.pt` | BananaLSD,4 類 | 98.40% | [下載](https://github.com/Amelieee-m-c/Single-TokenViT/releases/download/v1.0-official/banana.pt) |
+| `mango.pt` | MangoLeafBD,8 類 | 100.00% ‡ | [下載](https://github.com/Amelieee-m-c/Single-TokenViT/releases/download/v1.0-official/mango.pt) |
+| `groundnut.pt` | Groundnut leaf,6 類 | 99.47% | [下載](https://github.com/Amelieee-m-c/Single-TokenViT/releases/download/v1.0-official/groundnut.pt) |
+
+‡ mango.pt 的 100% 是資料切分洩漏造成的,不代表真實泛化能力——詳見下方
+「重現結果」表格的 ‡ 註解。
+
+載入方式:
+
+```python
+import torch
+from src.model import DenseNetSingleTokenViT
+
+model = DenseNetSingleTokenViT(num_classes=4)  # 依資料集類別數調整(見上表)
+model.load_state_dict(torch.load("corn.pt", map_location="cpu"))
+model.eval()
+```
+
 ## 重現結果
 
 | 資料集 | 類別數 | 論文 Accuracy | 重現 Accuracy |

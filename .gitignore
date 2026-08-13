@@ -10,6 +10,8 @@ data/
 *.pth
 *.keras
 *.h5
+# staging folder for GitHub Release uploads (published via `gh release`, not git)
+release_assets/
 
 # Kaggle API credentials — never commit these
 kaggle.json
