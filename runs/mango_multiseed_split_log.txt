@@ -1,0 +1,48 @@
+classes found: 8
+  Anthracnose                    total=  500 train=  400 test=  100
+  Bacterial Canker               total=  500 train=  400 test=  100
+  Cutting Weevil                 total=  500 train=  400 test=  100
+  Die Back                       total=  500 train=  400 test=  100
+  Gall Midge                     total=  500 train=  400 test=  100
+  Healthy                        total=  500 train=  400 test=  100
+  Powdery Mildew                 total=  500 train=  400 test=  100
+  Sooty Mould                    total=  500 train=  400 test=  100
+
+TOTAL train=3200 test=800 (grand total=4000)
+saved to: ..\data\splits\mango_seed2
+classes found: 8
+  Anthracnose                    total=  500 train=  400 test=  100
+  Bacterial Canker               total=  500 train=  400 test=  100
+  Cutting Weevil                 total=  500 train=  400 test=  100
+  Die Back                       total=  500 train=  400 test=  100
+  Gall Midge                     total=  500 train=  400 test=  100
+  Healthy                        total=  500 train=  400 test=  100
+  Powdery Mildew                 total=  500 train=  400 test=  100
+  Sooty Mould                    total=  500 train=  400 test=  100
+
+TOTAL train=3200 test=800 (grand total=4000)
+saved to: ..\data\splits\mango_seed3
+classes found: 8
+  Anthracnose                    total=  500 train=  400 test=  100
+  Bacterial Canker               total=  500 train=  400 test=  100
+  Cutting Weevil                 total=  500 train=  400 test=  100
+  Die Back                       total=  500 train=  400 test=  100
+  Gall Midge                     total=  500 train=  400 test=  100
+  Healthy                        total=  500 train=  400 test=  100
+  Powdery Mildew                 total=  500 train=  400 test=  100
+  Sooty Mould                    total=  500 train=  400 test=  100
+
+TOTAL train=3200 test=800 (grand total=4000)
+saved to: ..\data\splits\mango_seed4
+classes found: 8
+  Anthracnose                    total=  500 train=  400 test=  100
+  Bacterial Canker               total=  500 train=  400 test=  100
+  Cutting Weevil                 total=  500 train=  400 test=  100
+  Die Back                       total=  500 train=  400 test=  100
+  Gall Midge                     total=  500 train=  400 test=  100
+  Healthy                        total=  500 train=  400 test=  100
+  Powdery Mildew                 total=  500 train=  400 test=  100
+  Sooty Mould                    total=  500 train=  400 test=  100
+
+TOTAL train=3200 test=800 (grand total=4000)
+saved to: ..\data\splits\mango_seed5

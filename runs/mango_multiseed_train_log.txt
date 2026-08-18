@@ -1,0 +1,252 @@
+classes (8): ['Anthracnose', 'Bacterial Canker', 'Cutting Weevil', 'Die Back', 'Gall Midge', 'Healthy', 'Powdery Mildew', 'Sooty Mould']
+train=3200 test=800
+trainable params: 6238664  total params: 7668296
+epoch 1/35  train_loss=1.7924 train_acc=0.5466  test_loss=1.4795 test_acc=0.8438
+epoch 2/35  train_loss=1.0581 train_acc=0.9178  test_loss=0.7476 test_acc=0.9525
+epoch 3/35  train_loss=0.5102 train_acc=0.9691  test_loss=0.3194 test_acc=0.9800
+epoch 4/35  train_loss=0.2435 train_acc=0.9872  test_loss=0.1500 test_acc=0.9925
+epoch 5/35  train_loss=0.1407 train_acc=0.9922  test_loss=0.0792 test_acc=0.9950
+epoch 6/35  train_loss=0.0921 train_acc=0.9925  test_loss=0.0514 test_acc=0.9962
+epoch 7/35  train_loss=0.0643 train_acc=0.9950  test_loss=0.0332 test_acc=1.0000
+epoch 8/35  train_loss=0.0447 train_acc=0.9975  test_loss=0.0241 test_acc=0.9988
+epoch 9/35  train_loss=0.0352 train_acc=0.9984  test_loss=0.0198 test_acc=0.9988
+epoch 10/35  train_loss=0.0271 train_acc=0.9988  test_loss=0.0152 test_acc=0.9988
+epoch 11/35  train_loss=0.0233 train_acc=0.9991  test_loss=0.0135 test_acc=0.9975
+epoch 12/35  train_loss=0.0227 train_acc=0.9981  test_loss=0.0118 test_acc=0.9975
+epoch 13/35  train_loss=0.0202 train_acc=0.9966  test_loss=0.0107 test_acc=0.9975
+epoch 14/35  train_loss=0.0133 train_acc=0.9997  test_loss=0.0075 test_acc=1.0000
+epoch 15/35  train_loss=0.0126 train_acc=0.9988  test_loss=0.0052 test_acc=1.0000
+epoch 16/35  train_loss=0.0124 train_acc=0.9981  test_loss=0.0054 test_acc=1.0000
+epoch 17/35  train_loss=0.0092 train_acc=0.9991  test_loss=0.0041 test_acc=1.0000
+epoch 18/35  train_loss=0.0083 train_acc=0.9994  test_loss=0.0037 test_acc=1.0000
+epoch 19/35  train_loss=0.0100 train_acc=0.9994  test_loss=0.0042 test_acc=1.0000
+epoch 20/35  train_loss=0.0065 train_acc=0.9994  test_loss=0.0032 test_acc=1.0000
+epoch 21/35  train_loss=0.0074 train_acc=0.9991  test_loss=0.0028 test_acc=1.0000
+epoch 22/35  train_loss=0.0059 train_acc=0.9994  test_loss=0.0024 test_acc=1.0000
+epoch 23/35  train_loss=0.0066 train_acc=0.9994  test_loss=0.0029 test_acc=1.0000
+epoch 24/35  train_loss=0.0053 train_acc=0.9997  test_loss=0.0019 test_acc=1.0000
+epoch 25/35  train_loss=0.0040 train_acc=1.0000  test_loss=0.0018 test_acc=1.0000
+epoch 26/35  train_loss=0.0044 train_acc=0.9997  test_loss=0.0025 test_acc=0.9988
+epoch 27/35  train_loss=0.0052 train_acc=0.9991  test_loss=0.0028 test_acc=0.9988
+epoch 28/35  train_loss=0.0065 train_acc=0.9984  test_loss=0.0025 test_acc=1.0000
+epoch 29/35  train_loss=0.0029 train_acc=1.0000  test_loss=0.0022 test_acc=1.0000
+epoch 30/35  train_loss=0.0034 train_acc=1.0000  test_loss=0.0015 test_acc=1.0000
+epoch 31/35  train_loss=0.0025 train_acc=1.0000  test_loss=0.0022 test_acc=1.0000
+epoch 32/35  train_loss=0.0036 train_acc=0.9997  test_loss=0.0010 test_acc=1.0000
+epoch 33/35  train_loss=0.0022 train_acc=1.0000  test_loss=0.0008 test_acc=1.0000
+epoch 34/35  train_loss=0.0040 train_acc=0.9997  test_loss=0.0010 test_acc=1.0000
+epoch 35/35  train_loss=0.0017 train_acc=1.0000  test_loss=0.0009 test_acc=1.0000
+
+=== Test set results ===
+accuracy:  1.0000
+precision (macro): 1.0000
+recall (macro): 1.0000
+f1 (macro): 1.0000
+training_time_s: 357.37
+inference_time_s (per image): 0.0014
+                  precision    recall  f1-score   support
+
+     Anthracnose     1.0000    1.0000    1.0000       100
+Bacterial Canker     1.0000    1.0000    1.0000       100
+  Cutting Weevil     1.0000    1.0000    1.0000       100
+        Die Back     1.0000    1.0000    1.0000       100
+      Gall Midge     1.0000    1.0000    1.0000       100
+         Healthy     1.0000    1.0000    1.0000       100
+  Powdery Mildew     1.0000    1.0000    1.0000       100
+     Sooty Mould     1.0000    1.0000    1.0000       100
+
+        accuracy                         1.0000       800
+       macro avg     1.0000    1.0000    1.0000       800
+    weighted avg     1.0000    1.0000    1.0000       800
+
+
+saved: ..\runs\mango_seed2
+classes (8): ['Anthracnose', 'Bacterial Canker', 'Cutting Weevil', 'Die Back', 'Gall Midge', 'Healthy', 'Powdery Mildew', 'Sooty Mould']
+train=3200 test=800
+trainable params: 6238664  total params: 7668296
+epoch 1/35  train_loss=1.7547 train_acc=0.5459  test_loss=1.4021 test_acc=0.8900
+epoch 2/35  train_loss=1.0217 train_acc=0.9144  test_loss=0.6882 test_acc=0.9450
+epoch 3/35  train_loss=0.5019 train_acc=0.9672  test_loss=0.3154 test_acc=0.9738
+epoch 4/35  train_loss=0.2571 train_acc=0.9819  test_loss=0.1563 test_acc=0.9900
+epoch 5/35  train_loss=0.1469 train_acc=0.9909  test_loss=0.0855 test_acc=0.9950
+epoch 6/35  train_loss=0.0920 train_acc=0.9934  test_loss=0.0541 test_acc=0.9975
+epoch 7/35  train_loss=0.0706 train_acc=0.9944  test_loss=0.0403 test_acc=0.9975
+epoch 8/35  train_loss=0.0529 train_acc=0.9944  test_loss=0.0257 test_acc=1.0000
+epoch 9/35  train_loss=0.0387 train_acc=0.9953  test_loss=0.0202 test_acc=0.9988
+epoch 10/35  train_loss=0.0295 train_acc=0.9984  test_loss=0.0158 test_acc=1.0000
+epoch 11/35  train_loss=0.0271 train_acc=0.9975  test_loss=0.0116 test_acc=1.0000
+epoch 12/35  train_loss=0.0221 train_acc=0.9988  test_loss=0.0106 test_acc=1.0000
+epoch 13/35  train_loss=0.0185 train_acc=0.9981  test_loss=0.0080 test_acc=1.0000
+epoch 14/35  train_loss=0.0145 train_acc=0.9991  test_loss=0.0066 test_acc=1.0000
+epoch 15/35  train_loss=0.0133 train_acc=0.9991  test_loss=0.0057 test_acc=1.0000
+epoch 16/35  train_loss=0.0119 train_acc=0.9994  test_loss=0.0053 test_acc=1.0000
+epoch 17/35  train_loss=0.0092 train_acc=1.0000  test_loss=0.0041 test_acc=1.0000
+epoch 18/35  train_loss=0.0084 train_acc=0.9997  test_loss=0.0039 test_acc=1.0000
+epoch 19/35  train_loss=0.0085 train_acc=0.9994  test_loss=0.0035 test_acc=1.0000
+epoch 20/35  train_loss=0.0066 train_acc=0.9997  test_loss=0.0029 test_acc=1.0000
+epoch 21/35  train_loss=0.0069 train_acc=0.9988  test_loss=0.0025 test_acc=1.0000
+epoch 22/35  train_loss=0.0083 train_acc=0.9991  test_loss=0.0035 test_acc=1.0000
+epoch 23/35  train_loss=0.0060 train_acc=0.9994  test_loss=0.0031 test_acc=1.0000
+epoch 24/35  train_loss=0.0050 train_acc=0.9997  test_loss=0.0018 test_acc=1.0000
+epoch 25/35  train_loss=0.0044 train_acc=0.9997  test_loss=0.0017 test_acc=1.0000
+epoch 26/35  train_loss=0.0045 train_acc=0.9991  test_loss=0.0015 test_acc=1.0000
+epoch 27/35  train_loss=0.0038 train_acc=1.0000  test_loss=0.0014 test_acc=1.0000
+epoch 28/35  train_loss=0.0035 train_acc=0.9997  test_loss=0.0012 test_acc=1.0000
+epoch 29/35  train_loss=0.0034 train_acc=1.0000  test_loss=0.0015 test_acc=1.0000
+epoch 30/35  train_loss=0.0035 train_acc=1.0000  test_loss=0.0011 test_acc=1.0000
+epoch 31/35  train_loss=0.0038 train_acc=0.9997  test_loss=0.0013 test_acc=1.0000
+epoch 32/35  train_loss=0.0030 train_acc=1.0000  test_loss=0.0016 test_acc=1.0000
+epoch 33/35  train_loss=0.0023 train_acc=1.0000  test_loss=0.0011 test_acc=1.0000
+epoch 34/35  train_loss=0.0024 train_acc=0.9997  test_loss=0.0010 test_acc=1.0000
+epoch 35/35  train_loss=0.0017 train_acc=1.0000  test_loss=0.0008 test_acc=1.0000
+
+=== Test set results ===
+accuracy:  1.0000
+precision (macro): 1.0000
+recall (macro): 1.0000
+f1 (macro): 1.0000
+training_time_s: 372.67
+inference_time_s (per image): 0.0010
+                  precision    recall  f1-score   support
+
+     Anthracnose     1.0000    1.0000    1.0000       100
+Bacterial Canker     1.0000    1.0000    1.0000       100
+  Cutting Weevil     1.0000    1.0000    1.0000       100
+        Die Back     1.0000    1.0000    1.0000       100
+      Gall Midge     1.0000    1.0000    1.0000       100
+         Healthy     1.0000    1.0000    1.0000       100
+  Powdery Mildew     1.0000    1.0000    1.0000       100
+     Sooty Mould     1.0000    1.0000    1.0000       100
+
+        accuracy                         1.0000       800
+       macro avg     1.0000    1.0000    1.0000       800
+    weighted avg     1.0000    1.0000    1.0000       800
+
+
+saved: ..\runs\mango_seed3
+classes (8): ['Anthracnose', 'Bacterial Canker', 'Cutting Weevil', 'Die Back', 'Gall Midge', 'Healthy', 'Powdery Mildew', 'Sooty Mould']
+train=3200 test=800
+trainable params: 6238664  total params: 7668296
+epoch 1/35  train_loss=1.7931 train_acc=0.5544  test_loss=1.4636 test_acc=0.8800
+epoch 2/35  train_loss=1.0579 train_acc=0.9122  test_loss=0.7294 test_acc=0.9463
+epoch 3/35  train_loss=0.5323 train_acc=0.9569  test_loss=0.3369 test_acc=0.9675
+epoch 4/35  train_loss=0.2565 train_acc=0.9847  test_loss=0.1600 test_acc=0.9912
+epoch 5/35  train_loss=0.1503 train_acc=0.9891  test_loss=0.0912 test_acc=0.9938
+epoch 6/35  train_loss=0.0921 train_acc=0.9962  test_loss=0.0537 test_acc=0.9988
+epoch 7/35  train_loss=0.0669 train_acc=0.9956  test_loss=0.0393 test_acc=0.9962
+epoch 8/35  train_loss=0.0485 train_acc=0.9956  test_loss=0.0276 test_acc=1.0000
+epoch 9/35  train_loss=0.0338 train_acc=0.9984  test_loss=0.0224 test_acc=1.0000
+epoch 10/35  train_loss=0.0342 train_acc=0.9959  test_loss=0.0160 test_acc=1.0000
+epoch 11/35  train_loss=0.0252 train_acc=0.9988  test_loss=0.0133 test_acc=1.0000
+epoch 12/35  train_loss=0.0212 train_acc=0.9972  test_loss=0.0103 test_acc=1.0000
+epoch 13/35  train_loss=0.0180 train_acc=0.9988  test_loss=0.0087 test_acc=1.0000
+epoch 14/35  train_loss=0.0148 train_acc=0.9991  test_loss=0.0074 test_acc=1.0000
+epoch 15/35  train_loss=0.0141 train_acc=0.9984  test_loss=0.0062 test_acc=1.0000
+epoch 16/35  train_loss=0.0120 train_acc=0.9988  test_loss=0.0049 test_acc=1.0000
+epoch 17/35  train_loss=0.0133 train_acc=0.9981  test_loss=0.0045 test_acc=1.0000
+epoch 18/35  train_loss=0.0079 train_acc=0.9994  test_loss=0.0039 test_acc=1.0000
+epoch 19/35  train_loss=0.0075 train_acc=1.0000  test_loss=0.0034 test_acc=1.0000
+epoch 20/35  train_loss=0.0076 train_acc=0.9994  test_loss=0.0029 test_acc=1.0000
+epoch 21/35  train_loss=0.0071 train_acc=0.9994  test_loss=0.0025 test_acc=1.0000
+epoch 22/35  train_loss=0.0059 train_acc=0.9997  test_loss=0.0023 test_acc=1.0000
+epoch 23/35  train_loss=0.0069 train_acc=0.9984  test_loss=0.0021 test_acc=1.0000
+epoch 24/35  train_loss=0.0063 train_acc=0.9988  test_loss=0.0020 test_acc=1.0000
+epoch 25/35  train_loss=0.0046 train_acc=0.9997  test_loss=0.0021 test_acc=1.0000
+epoch 26/35  train_loss=0.0044 train_acc=0.9997  test_loss=0.0017 test_acc=1.0000
+epoch 27/35  train_loss=0.0044 train_acc=0.9994  test_loss=0.0013 test_acc=1.0000
+epoch 28/35  train_loss=0.0061 train_acc=0.9991  test_loss=0.0015 test_acc=1.0000
+epoch 29/35  train_loss=0.0035 train_acc=0.9997  test_loss=0.0011 test_acc=1.0000
+epoch 30/35  train_loss=0.0042 train_acc=0.9997  test_loss=0.0011 test_acc=1.0000
+epoch 31/35  train_loss=0.0026 train_acc=1.0000  test_loss=0.0010 test_acc=1.0000
+epoch 32/35  train_loss=0.0045 train_acc=0.9991  test_loss=0.0010 test_acc=1.0000
+epoch 33/35  train_loss=0.0024 train_acc=1.0000  test_loss=0.0009 test_acc=1.0000
+epoch 34/35  train_loss=0.0037 train_acc=0.9997  test_loss=0.0010 test_acc=1.0000
+epoch 35/35  train_loss=0.0021 train_acc=1.0000  test_loss=0.0011 test_acc=1.0000
+
+=== Test set results ===
+accuracy:  1.0000
+precision (macro): 1.0000
+recall (macro): 1.0000
+f1 (macro): 1.0000
+training_time_s: 264.85
+inference_time_s (per image): 0.0014
+                  precision    recall  f1-score   support
+
+     Anthracnose     1.0000    1.0000    1.0000       100
+Bacterial Canker     1.0000    1.0000    1.0000       100
+  Cutting Weevil     1.0000    1.0000    1.0000       100
+        Die Back     1.0000    1.0000    1.0000       100
+      Gall Midge     1.0000    1.0000    1.0000       100
+         Healthy     1.0000    1.0000    1.0000       100
+  Powdery Mildew     1.0000    1.0000    1.0000       100
+     Sooty Mould     1.0000    1.0000    1.0000       100
+
+        accuracy                         1.0000       800
+       macro avg     1.0000    1.0000    1.0000       800
+    weighted avg     1.0000    1.0000    1.0000       800
+
+
+saved: ..\runs\mango_seed4
+classes (8): ['Anthracnose', 'Bacterial Canker', 'Cutting Weevil', 'Die Back', 'Gall Midge', 'Healthy', 'Powdery Mildew', 'Sooty Mould']
+train=3200 test=800
+trainable params: 6238664  total params: 7668296
+epoch 1/35  train_loss=1.7678 train_acc=0.5872  test_loss=1.4290 test_acc=0.8862
+epoch 2/35  train_loss=1.0412 train_acc=0.9081  test_loss=0.7323 test_acc=0.9500
+epoch 3/35  train_loss=0.5137 train_acc=0.9637  test_loss=0.3156 test_acc=0.9838
+epoch 4/35  train_loss=0.2518 train_acc=0.9866  test_loss=0.1569 test_acc=0.9912
+epoch 5/35  train_loss=0.1410 train_acc=0.9906  test_loss=0.0846 test_acc=1.0000
+epoch 6/35  train_loss=0.0853 train_acc=0.9950  test_loss=0.0548 test_acc=0.9988
+epoch 7/35  train_loss=0.0619 train_acc=0.9950  test_loss=0.0372 test_acc=1.0000
+epoch 8/35  train_loss=0.0471 train_acc=0.9962  test_loss=0.0259 test_acc=1.0000
+epoch 9/35  train_loss=0.0395 train_acc=0.9956  test_loss=0.0186 test_acc=1.0000
+epoch 10/35  train_loss=0.0294 train_acc=0.9969  test_loss=0.0139 test_acc=1.0000
+epoch 11/35  train_loss=0.0262 train_acc=0.9975  test_loss=0.0116 test_acc=1.0000
+epoch 12/35  train_loss=0.0190 train_acc=0.9991  test_loss=0.0097 test_acc=1.0000
+epoch 13/35  train_loss=0.0162 train_acc=0.9997  test_loss=0.0078 test_acc=1.0000
+epoch 14/35  train_loss=0.0145 train_acc=0.9988  test_loss=0.0058 test_acc=1.0000
+epoch 15/35  train_loss=0.0128 train_acc=0.9988  test_loss=0.0052 test_acc=1.0000
+epoch 16/35  train_loss=0.0125 train_acc=0.9984  test_loss=0.0069 test_acc=0.9988
+epoch 17/35  train_loss=0.0131 train_acc=0.9981  test_loss=0.0040 test_acc=1.0000
+epoch 18/35  train_loss=0.0078 train_acc=1.0000  test_loss=0.0033 test_acc=1.0000
+epoch 19/35  train_loss=0.0080 train_acc=0.9994  test_loss=0.0034 test_acc=1.0000
+epoch 20/35  train_loss=0.0057 train_acc=1.0000  test_loss=0.0028 test_acc=1.0000
+epoch 21/35  train_loss=0.0102 train_acc=0.9975  test_loss=0.0030 test_acc=1.0000
+epoch 22/35  train_loss=0.0082 train_acc=0.9988  test_loss=0.0024 test_acc=1.0000
+epoch 23/35  train_loss=0.0050 train_acc=0.9997  test_loss=0.0021 test_acc=1.0000
+epoch 24/35  train_loss=0.0060 train_acc=0.9994  test_loss=0.0020 test_acc=1.0000
+epoch 25/35  train_loss=0.0043 train_acc=0.9997  test_loss=0.0016 test_acc=1.0000
+epoch 26/35  train_loss=0.0040 train_acc=1.0000  test_loss=0.0016 test_acc=1.0000
+epoch 27/35  train_loss=0.0028 train_acc=1.0000  test_loss=0.0011 test_acc=1.0000
+epoch 28/35  train_loss=0.0032 train_acc=1.0000  test_loss=0.0011 test_acc=1.0000
+epoch 29/35  train_loss=0.0037 train_acc=0.9994  test_loss=0.0011 test_acc=1.0000
+epoch 30/35  train_loss=0.0040 train_acc=0.9994  test_loss=0.0010 test_acc=1.0000
+epoch 31/35  train_loss=0.0055 train_acc=0.9988  test_loss=0.0009 test_acc=1.0000
+epoch 32/35  train_loss=0.0039 train_acc=0.9997  test_loss=0.0009 test_acc=1.0000
+epoch 33/35  train_loss=0.0025 train_acc=1.0000  test_loss=0.0010 test_acc=1.0000
+epoch 34/35  train_loss=0.0025 train_acc=0.9997  test_loss=0.0007 test_acc=1.0000
+epoch 35/35  train_loss=0.0022 train_acc=1.0000  test_loss=0.0006 test_acc=1.0000
+
+=== Test set results ===
+accuracy:  1.0000
+precision (macro): 1.0000
+recall (macro): 1.0000
+f1 (macro): 1.0000
+training_time_s: 243.45
+inference_time_s (per image): 0.0010
+                  precision    recall  f1-score   support
+
+     Anthracnose     1.0000    1.0000    1.0000       100
+Bacterial Canker     1.0000    1.0000    1.0000       100
+  Cutting Weevil     1.0000    1.0000    1.0000       100
+        Die Back     1.0000    1.0000    1.0000       100
+      Gall Midge     1.0000    1.0000    1.0000       100
+         Healthy     1.0000    1.0000    1.0000       100
+  Powdery Mildew     1.0000    1.0000    1.0000       100
+     Sooty Mould     1.0000    1.0000    1.0000       100
+
+        accuracy                         1.0000       800
+       macro avg     1.0000    1.0000    1.0000       800
+    weighted avg     1.0000    1.0000    1.0000       800
+
+
+saved: ..\runs\mango_seed5

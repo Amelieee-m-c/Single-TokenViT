@@ -1,0 +1,103 @@
+{
+  "accuracy": 1.0,
+  "precision_macro": 1.0,
+  "recall_macro": 1.0,
+  "f1_macro": 1.0,
+  "confusion_matrix": [
+    [
+      100,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      100,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      100,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      100,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      100,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      100,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      100,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      100
+    ]
+  ],
+  "class_names": [
+    "Anthracnose",
+    "Bacterial Canker",
+    "Cutting Weevil",
+    "Die Back",
+    "Gall Midge",
+    "Healthy",
+    "Powdery Mildew",
+    "Sooty Mould"
+  ],
+  "classification_report": "                  precision    recall  f1-score   support\n\n     Anthracnose     1.0000    1.0000    1.0000       100\nBacterial Canker     1.0000    1.0000    1.0000       100\n  Cutting Weevil     1.0000    1.0000    1.0000       100\n        Die Back     1.0000    1.0000    1.0000       100\n      Gall Midge     1.0000    1.0000    1.0000       100\n         Healthy     1.0000    1.0000    1.0000       100\n  Powdery Mildew     1.0000    1.0000    1.0000       100\n     Sooty Mould     1.0000    1.0000    1.0000       100\n\n        accuracy                         1.0000       800\n       macro avg     1.0000    1.0000    1.0000       800\n    weighted avg     1.0000    1.0000    1.0000       800\n",
+  "training_time_s": 264.8500258922577,
+  "inference_time_s_per_image": 0.0013882479071617127,
+  "trainable_params": 6238664,
+  "total_params": 7668296
+}
