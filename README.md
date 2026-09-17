@@ -105,9 +105,31 @@ embed dim 64,2 個 head)、`AttentionPooling`(對這兩個 token 再做一次
 
 1. **Patch embedding**:公式 (4) 描述的是在 1024-channel 特徵圖上做一個
    字面意義的 7×7/stride-7 conv,光這一層就要花費約 3.2M 參數——是論文
-   自己宣稱「整個 ViT 模組只有約 0.15M」(Section 5)的 20 倍以上。這裡
-   改成 global-average-pool + Linear(1024,64)(約 65.6K 參數),讓整個
-   ViT 模組落在約 99K,更接近論文宣稱的預算。
+   自己宣稱「整個 ViT 模組只有約 0.15M」(Section 5)的 20 倍以上。預設
+   (`--patch_embed gap_linear`)改成 global-average-pool + Linear(1024,64)
+   (約 65.6K 參數),讓整個 ViT 模組落在約 99K。
+
+   **2026-09-17 更新:測試了一個更貼近論文參數預算的替代讀法。** 論文
+   Table 7 明確給「Lightweight ViT」模組總參數量 **154,628**,反推
+   encoder+attention pooling+維度擴展大約佔 40-45K,patch embedding 本身
+   應該要落在 ~110-115K 才對得上——**depthwise conv(7×7, groups=1024)+
+   pointwise Linear(1024→64)** 算出來是 150,464(整個 ViT 模組),只差
+   2.7%,比 gap_linear 的 99,264(少36%)更貼近論文數字。新增
+   `--patch_embed depthwise` 支援這個讀法,5 個資料集全部重跑對照:
+
+   | 資料集 | gap_linear(預設) | depthwise | 差異 |
+   |---|---|---|---|
+   | Corn | 96.30% | 96.30% | 持平 |
+   | Tomato | 99.30% | 99.45% | +0.15pp |
+   | BananaLSD | 98.40% | 97.87% | **-0.53pp** |
+   | MangoLeafBD | 100.00%‡‡ | 100.00%‡‡ | 持平(洩漏問題不受架構影響) |
+   | Groundnut | 99.47% | 99.52% | +0.05pp |
+
+   **結果好壞參半,不是明確的勝利**:tomato/groundnut 小幅變好,但
+   banana(訓練集只有749張,樣本量小)反而明顯變差,corn/mango 持平。
+   雖然 depthwise 在參數量上明顯更貼近論文原意,但準確率上沒有一致的
+   提升,不足以取代 gap_linear 當預設值——**gap_linear 維持預設**,
+   depthwise 保留當可選項,供想要更貼近論文參數預算的人使用。
 2. **Fusion classifier**:公式 (22) 明確給出的 W1 形狀(512×1152)光是
    這一層就要花費約 590K 參數,已經是論文宣稱「fusion classifier 約
    0.23M」(Section 5)的 2.5 倍。這裡保留公式明確給出的形狀(比一個四捨

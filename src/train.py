@@ -99,6 +99,12 @@ def main():
     ap.add_argument("--batch_size", type=int, default=32)
     ap.add_argument("--lr", type=float, default=1e-5)
     ap.add_argument("--num_workers", type=int, default=4)
+    ap.add_argument("--patch_embed", choices=["gap_linear", "depthwise"], default="gap_linear",
+                     help="'gap_linear' (default) = GAP+Linear patch embedding, the original "
+                          "reading (~99K ViT-module params). 'depthwise' = depthwise conv + "
+                          "pointwise Linear, an alternative reading that lands at ~150K params, "
+                          "much closer to the paper's own stated ~154,628 -- see model.py "
+                          "docstring's 2026-09-17 note.")
     args = ap.parse_args()
 
     set_seed(args.seed)
@@ -123,7 +129,7 @@ def main():
     test_loader = DataLoader(test_ds, batch_size=args.batch_size, shuffle=False,
                               num_workers=args.num_workers, pin_memory=True, persistent_workers=persistent)
 
-    model = DenseNetSingleTokenViT(num_classes=num_classes).to(device)
+    model = DenseNetSingleTokenViT(num_classes=num_classes, patch_embed=args.patch_embed).to(device)
     print(f"trainable params: {count_params(model)}  total params: {count_all_params(model)}")
 
     criterion = nn.CrossEntropyLoss()

@@ -28,14 +28,23 @@ but two of its own numbers are internally inconsistent with each other:
     single 64-dim token. Taken literally (a dense Conv2d(1024, 64, kernel=7,
     stride=7)), that layer alone costs 1024*64*49 = 3,211,264 params --
     over 20x the paper's own claimed "Lightweight ViT module: ~0.15M
-    parameters" (Section 5) for the *entire* transformer module. Since a
-    7x7 kernel over a 7x7 input with stride 7 produces exactly one output
-    position regardless of how the input channels are combined, we
-    implement the mathematically-equivalent-in-spirit but far cheaper
-    version: global-average-pool Fcnn to (B,1024), then Linear(1024, 64).
-    This costs ~65.6K params and brings the whole ViT module (patch embed +
-    cls/pos tokens + one encoder layer) to ~99K params -- much closer to
-    the paper's stated ~0.15M than the literal reading's ~3.2M.
+    parameters" (Section 5) for the *entire* transformer module. Default
+    (`patch_embed="gap_linear"`) implements the mathematically-equivalent-
+    in-spirit but far cheaper version: global-average-pool Fcnn to (B,1024),
+    then Linear(1024, 64) (~65.6K params, whole ViT module ~99K).
+    2026-09-17: the paper's own Table 7 states the standalone Lightweight
+    ViT module totals 154,628 params -- back-computing from that (encoder +
+    attention-pooling + dim-expansion account for roughly 40-45K), the
+    patch embedding itself should cost ~110-115K to hit that total, which
+    is a much closer match to a **depthwise** Conv2d(1024, kernel=7,
+    groups=1024) + pointwise Linear(1024,64) (~116.8K: depthwise 1024*49+
+    1024 bias, pointwise 1024*64+64 bias) than either the literal dense
+    conv (~3.2M) or GAP+Linear (~65.6K). This preserves per-channel
+    *learned* spatial weighting (vs. GAP's fixed uniform 1/49 average) at
+    roughly the paper's stated budget. Available via `patch_embed="depthwise"`;
+    default remains `"gap_linear"` (the original, more-tested reading) for
+    backward compatibility -- this is an untested architectural-fidelity
+    alternative, not a confirmed correction.
   - **Fusion classifier cost.** Eq. (22) explicitly gives W1 in
     R^(512x1152), which alone costs 512*1152+512 = 590,336 params -- already
     2.5x the paper's own claimed "Fusion classifier: ~0.23M parameters"
@@ -96,13 +105,27 @@ class SingleTokenViT(nn.Module):
     refined by a single lightweight transformer encoder layer (Section III-C.2)."""
 
     def __init__(self, in_channels: int = 1024, embed_dim: int = 64,
-                 num_heads: int = 2, mlp_dim: int = 128, dropout: float = 0.1):
+                 num_heads: int = 2, mlp_dim: int = 128, dropout: float = 0.1,
+                 patch_embed: str = "gap_linear", spatial_size: int = 7):
         super().__init__()
         self.embed_dim = embed_dim
-        # GAP + Linear, not a literal Conv2d(in_channels, embed_dim, 7, stride=7)
-        # -- see module docstring "Patch embedding cost" for why.
-        self.patch_pool = nn.AdaptiveAvgPool2d(1)
-        self.patch_embed = nn.Linear(in_channels, embed_dim)
+        self.patch_embed_mode = patch_embed
+        if patch_embed == "gap_linear":
+            # GAP + Linear, not a literal Conv2d(in_channels, embed_dim, 7, stride=7)
+            # -- see module docstring "Patch embedding cost" for why.
+            self.patch_pool = nn.AdaptiveAvgPool2d(1)
+            self.patch_proj = nn.Linear(in_channels, embed_dim)
+        elif patch_embed == "depthwise":
+            # Depthwise conv (per-channel learned spatial weighting, not a
+            # uniform average) collapses the 7x7 spatial map to one value per
+            # channel, then a pointwise Linear projects to embed_dim -- see
+            # module docstring's 2026-09-17 note for why this better matches
+            # the paper's own stated ~154,628-param ViT module budget.
+            self.patch_pool = nn.Conv2d(in_channels, in_channels, kernel_size=spatial_size,
+                                         groups=in_channels, bias=True)
+            self.patch_proj = nn.Linear(in_channels, embed_dim)
+        else:
+            raise ValueError(f"unknown patch_embed mode: {patch_embed!r}")
         self.cls_token = nn.Parameter(torch.zeros(1, 1, embed_dim))
         self.pos_embed = nn.Parameter(torch.zeros(1, 2, embed_dim))
         nn.init.trunc_normal_(self.cls_token, std=0.02)
@@ -122,7 +145,7 @@ class SingleTokenViT(nn.Module):
     def forward(self, fmap):
         b = fmap.shape[0]
         pooled = self.patch_pool(fmap).flatten(1)      # (B, in_channels)
-        zp = self.patch_embed(pooled).unsqueeze(1)      # (B, 1, 64)
+        zp = self.patch_proj(pooled).unsqueeze(1)      # (B, 1, 64)
         cls = self.cls_token.expand(b, -1, -1)                   # (B, 1, 64)
         z0 = torch.cat([cls, zp], dim=1) + self.pos_embed        # (B, 2, 64)
 
@@ -171,10 +194,11 @@ class FusionClassifier(nn.Module):
 
 
 class DenseNetSingleTokenViT(nn.Module):
-    def __init__(self, num_classes: int, pretrained_backbone: bool = True):
+    def __init__(self, num_classes: int, pretrained_backbone: bool = True,
+                 patch_embed: str = "gap_linear"):
         super().__init__()
         self.backbone = DenseNetBackbone(pretrained=pretrained_backbone)
-        self.vit = SingleTokenViT(in_channels=self.backbone.out_channels)
+        self.vit = SingleTokenViT(in_channels=self.backbone.out_channels, patch_embed=patch_embed)
         self.attn_pool = AttentionPooling()
         self.classifier = FusionClassifier(
             cnn_dim=self.backbone.out_channels, vit_dim=128, num_classes=num_classes

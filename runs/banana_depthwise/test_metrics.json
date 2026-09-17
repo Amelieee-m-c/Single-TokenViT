@@ -1,0 +1,43 @@
+{
+  "accuracy": 0.9787234042553191,
+  "precision_macro": 0.977363782051282,
+  "recall_macro": 0.9727976792943899,
+  "f1_macro": 0.9750222254081377,
+  "confusion_matrix": [
+    [
+      31,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      25,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      34,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      94
+    ]
+  ],
+  "class_names": [
+    "cordana",
+    "healthy",
+    "pestalotiopsis",
+    "sigatoka"
+  ],
+  "classification_report": "                precision    recall  f1-score   support\n\n       cordana     0.9688    0.9688    0.9688        32\n       healthy     0.9615    0.9615    0.9615        26\npestalotiopsis     1.0000    0.9714    0.9855        35\n      sigatoka     0.9792    0.9895    0.9843        95\n\n      accuracy                         0.9787       188\n     macro avg     0.9774    0.9728    0.9750       188\n  weighted avg     0.9788    0.9787    0.9787       188\n",
+  "training_time_s": 81.0685544013977,
+  "inference_time_s_per_image": 0.0011973469815355665,
+  "trainable_params": 6287812,
+  "total_params": 7717444
+}

@@ -1,0 +1,43 @@
+{
+  "accuracy": 0.9629629629629629,
+  "precision_macro": 0.9546504086709311,
+  "recall_macro": 0.9511401140768772,
+  "f1_macro": 0.9527951500212353,
+  "confusion_matrix": [
+    [
+      213,
+      5,
+      11,
+      0
+    ],
+    [
+      1,
+      260,
+      0,
+      0
+    ],
+    [
+      11,
+      3,
+      101,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      232
+    ]
+  ],
+  "class_names": [
+    "Blight",
+    "Common_Rust",
+    "Gray_Leaf_Spot",
+    "Healthy"
+  ],
+  "classification_report": "                precision    recall  f1-score   support\n\n        Blight     0.9467    0.9301    0.9383       229\n   Common_Rust     0.9701    0.9962    0.9830       261\nGray_Leaf_Spot     0.9018    0.8783    0.8899       115\n       Healthy     1.0000    1.0000    1.0000       232\n\n      accuracy                         0.9630       837\n     macro avg     0.9547    0.9511    0.9528       837\n  weighted avg     0.9626    0.9630    0.9627       837\n",
+  "training_time_s": 256.0399520397186,
+  "inference_time_s_per_image": 0.0014240191971244493,
+  "trainable_params": 6287812,
+  "total_params": 7717444
+}
